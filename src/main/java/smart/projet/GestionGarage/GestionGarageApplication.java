@@ -1,13 +1,13 @@
-package smart.projet.GestionGarage;
+package smart.projet.GestionTicket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestionGarageApplication {
+public class GestionTicketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestionGarageApplication.class, args);
+		SpringApplication.run(GestionTicketApplication.class, args);
 	}
 
 }
