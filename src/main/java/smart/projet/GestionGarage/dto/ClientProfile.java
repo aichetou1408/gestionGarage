@@ -9,8 +9,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ResponseMsg {
+public class ClientProfile {
 
-    private String msg;
+    private String Clientname;
+    private String email;
+    private String nni;
+    private String phoneNumber;
+    private String address;
     
 }

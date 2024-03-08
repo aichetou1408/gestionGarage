@@ -5,16 +5,16 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import smart.projet.GestionGarage.entity.TicketEntity;
+import smart.projet.GestionGarage.entity.Ticket;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class EmployeTicket {
+public class AdminTicket {
 
-    private List<TicketEntity> ticketEntities;
-    private int total;
+    private List<Ticket> tickets;
+    private int totalTickets;
     
 }

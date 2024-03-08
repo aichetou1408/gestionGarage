@@ -42,11 +42,11 @@ title %0
 @REM set %HOME% to equivalent of $HOME
 if "%HOME%" == "" (set "HOME=%HOMEDRIVE%%HOMEPATH%")
 
-@REM Execute a user defined script before this one
+@REM Execute a Client defined script before this one
 if not "%MAVEN_SKIP_RC%" == "" goto skipRcPre
 @REM check for pre script, once with legacy .bat ending and once with .cmd ending
-if exist "%USERPROFILE%\mavenrc_pre.bat" call "%USERPROFILE%\mavenrc_pre.bat" %*
-if exist "%USERPROFILE%\mavenrc_pre.cmd" call "%USERPROFILE%\mavenrc_pre.cmd" %*
+if exist "%ClientPROFILE%\mavenrc_pre.bat" call "%ClientPROFILE%\mavenrc_pre.bat" %*
+if exist "%ClientPROFILE%\mavenrc_pre.cmd" call "%ClientPROFILE%\mavenrc_pre.cmd" %*
 :skipRcPre
 
 @setlocal
@@ -141,11 +141,11 @@ if exist %WRAPPER_JAR% (
     )
 
     powershell -Command "&{"^
-		"$webclient = new-object System.Net.WebClient;"^
-		"if (-not ([string]::IsNullOrEmpty('%MVNW_USERNAME%') -and [string]::IsNullOrEmpty('%MVNW_PASSWORD%'))) {"^
-		"$webclient.Credentials = new-object System.Net.NetworkCredential('%MVNW_USERNAME%', '%MVNW_PASSWORD%');"^
+		"$webAdmin = new-object System.Net.WebAdmin;"^
+		"if (-not ([string]::IsNullOrEmpty('%MVNW_ClientNAME%') -and [string]::IsNullOrEmpty('%MVNW_PASSWORD%'))) {"^
+		"$webAdmin.Credentials = new-object System.Net.NetworkCredential('%MVNW_ClientNAME%', '%MVNW_PASSWORD%');"^
 		"}"^
-		"[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $webclient.DownloadFile('%WRAPPER_URL%', '%WRAPPER_JAR%')"^
+		"[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $webAdmin.DownloadFile('%WRAPPER_URL%', '%WRAPPER_JAR%')"^
 		"}"
     if "%MVNW_VERBOSE%" == "true" (
         echo Finished downloading %WRAPPER_JAR%
@@ -193,8 +193,8 @@ set ERROR_CODE=1
 
 if not "%MAVEN_SKIP_RC%"=="" goto skipRcPost
 @REM check for post script, once with legacy .bat ending and once with .cmd ending
-if exist "%USERPROFILE%\mavenrc_post.bat" call "%USERPROFILE%\mavenrc_post.bat"
-if exist "%USERPROFILE%\mavenrc_post.cmd" call "%USERPROFILE%\mavenrc_post.cmd"
+if exist "%ClientPROFILE%\mavenrc_post.bat" call "%ClientPROFILE%\mavenrc_post.bat"
+if exist "%ClientPROFILE%\mavenrc_post.cmd" call "%ClientPROFILE%\mavenrc_post.cmd"
 :skipRcPost
 
 @REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'

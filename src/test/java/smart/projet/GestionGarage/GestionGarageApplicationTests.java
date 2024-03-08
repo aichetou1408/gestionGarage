@@ -1,10 +1,10 @@
-package smart.projet.GestionTicket;
+package smart.projet.GestionGarage;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GestionTicketApplicationTests {
+class GestionGarageApplicationTests {
 
 	@Test
 	void contextLoads() {
